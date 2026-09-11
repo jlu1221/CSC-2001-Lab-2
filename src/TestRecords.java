@@ -2,7 +2,7 @@ public class TestRecords {
     public static void main(String[] args) {
         // Date objects
         Date date1 = new Date(2026, 4, 30);
-        Date date2 = new Date(2026, 3,31);
+        Date date2 = new Date(2026, 3, 31);
         Date date3 = new Date(2026, 2, 28);
 
         System.out.println(Date.daysInMonth(2));
@@ -35,6 +35,6 @@ public class TestRecords {
         DateList list4 = new DateList(new Date(2027, 2, 1), null);
 
         System.out.println(DateList.append(list1, list4));
-
     }
 }
+

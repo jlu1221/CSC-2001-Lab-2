@@ -1,5 +1,6 @@
 public record DateList(Date first, DateList rest) {
     // listLen method
+    // Purpose: this method return the length of the list of dates
     static int listLen(DateList list) {
         if (list == null) {
             return 0;
@@ -8,6 +9,7 @@ public record DateList(Date first, DateList rest) {
         }
     }
     // minDate method
+    // Purpose: this method return the earliest date that occur in the list
     static Date minDate(DateList list) {
         if (list == null) {
             return null;
@@ -26,6 +28,7 @@ public record DateList(Date first, DateList rest) {
     }
 
     // dateCover method
+    // Purpose: this method accepts a list of dates and returns the shortest date intervals
     static DateInterval dateCover(DateList list) {
         if (list == null) {
             return null;
@@ -44,6 +47,7 @@ public record DateList(Date first, DateList rest) {
     }
 
     // allTomorrows method
+    // Purpose: this method takes a list of dates and returns a new list of dates that maps out the following day for each date
     static DateList allTomorrows(DateList list) {
         if (list == null) {
             return null;
@@ -54,6 +58,7 @@ public record DateList(Date first, DateList rest) {
         );
     }
     // addToEnd method
+    // Purpose: this method take a list of dates and a new date that is added to the end of the list
     static DateList addToEnd(DateList list, Date date) {
         if (list == null) {
             return new DateList(date, null);
@@ -64,6 +69,7 @@ public record DateList(Date first, DateList rest) {
         );
     }
     // append method
+    // Purpose: this method takes two lists of dates and return the new list containing the dates from the first list then the second list
     static DateList append(DateList list1, DateList list2) {
         if (list1 == null) {
             return list2;
