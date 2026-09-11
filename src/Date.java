@@ -43,4 +43,24 @@ public record Date(int year, int month, int day){
         else
             return new Date(date.year(), date.month(), date.day() + 1);
     }
+
+    // dayOfYear method
+    static int dayOfYear(Date date) {
+        return (switch (date.month()) {
+            case 1  -> 0;    // January
+            case 2  -> 31;   // February
+            case 3  -> 59;   // March
+            case 4  -> 90;   // April
+            case 5  -> 120;  // May
+            case 6  -> 151;  // June
+            case 7  -> 181;  // July
+            case 8  -> 212;  // August
+            case 9  -> 243;  // September
+            case 10 -> 273;  // October
+            case 11 -> 304;  // November
+            case 12 -> 334;  // December
+        } + date.day() - 1);
+    }
+
+    // comesBefore method
 }
