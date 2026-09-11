@@ -59,8 +59,23 @@ public record Date(int year, int month, int day){
             case 10 -> 273;  // October
             case 11 -> 304;  // November
             case 12 -> 334;  // December
+            default -> throw new IllegalStateException("Unexpected value: " + date.month());
         } + date.day() - 1);
     }
 
     // comesBefore method
+    static boolean comesBefore(Date date1, Date date2) {
+        if (date1.year() < date2.year()) {
+            return true;
+        } else if (date1.year() == date2.year()
+                && date1.month() < date2.month()) {
+            return true;
+        } else if (date1.year() == date2.year()
+                && date1.month() == date2.month()
+                && date1.day() <= date2.day()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
