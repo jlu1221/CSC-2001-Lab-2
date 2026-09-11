@@ -1,2 +1,1 @@
-public class DateList {
-}
+public record DateList(Date first, DateList rest) {
