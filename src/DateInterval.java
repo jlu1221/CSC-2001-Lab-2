@@ -35,9 +35,9 @@ public record DateInterval(Date start, Date end) {
         }
         Date start;
         if (Date.comesBefore(a.start(), b.start())) {
-            start = b.start();
-        } else {
             start = a.start();
+        } else {
+            start = b.start();
         }
         Date end;
         if (Date.comesBefore(a.end(), b.end())) {
